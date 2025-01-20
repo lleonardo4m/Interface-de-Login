@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resenhando|Login</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 50px;
+
+            background-color: black;
+    
+            display: flex;
+            justify-content: center;
+            box-shadow: 1px 0 3px rgba(0, 0, 0, 0.4);
+        }
+
+        p{
+            color: white;
+            text-align: center;
+            font-family: cursive;
+            font-size: 25px;
+        }
         body{
             font-family: Arial, Helvetica, sans-serif;
             background-image: linear-gradient(to right, rgb(50, 255, 95), rgb(0, 238, 255));
@@ -18,6 +40,7 @@
             padding: 50px;
             border-radius: 10%;
             color: white;
+            box-shadow: 1px 0 3px rgba(0, 0, 0, 0.8);
         
         }
         .usuario{
@@ -31,11 +54,6 @@
             border: none; 
             outline: none;
             font-size: 15px;
-        }
-        .logo{
-            text-align: center;
-            font-family: cursive;
-            font-size: 50px;            
         }
         .InputSubmit{
             background-color: dodgerblue;
@@ -64,12 +82,16 @@
     </style>
 </head>
 <body>
+
+    <header>
+    <p><strong>Resenhando</strong></p>
+    </header>
+    
     <a href="home.php" class="voltar">Voltar</a>
-    <div class="logo">
-        <b><p>Resenhando </b></p> 
-    </div>
+
     <div class="login">
         <h1>Login</h1>
+        <br>
         <form action="testLogin.php" method="POST">
          <input type="text" name="nome" placeholder="Nome de usuário" style="border-radius: 5px;" class="usuario">
          <br><br>

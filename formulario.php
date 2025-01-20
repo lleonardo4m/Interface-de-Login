@@ -12,12 +12,6 @@ if(isset($_POST['submit']))
     // print_r("<br>");
     // print_r("Data de nascimento: ". $_POST['data_nascimento']);
     // print_r("<br>");
-    // print_r("Cidade: ". $_POST['cidade']);
-    // print_r("<br>");
-    // print_r("Estado: ". $_POST['estado']);
-    // print_r("<br>");
-    // print_r("Endereço: ". $_POST['endereco']);
-    // print_r("<br>");
 
     include_once('config.php');
     
@@ -39,6 +33,29 @@ if(isset($_POST['submit']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resenhando | Formulário</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 50px;
+
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            box-shadow: 1px 0 3px rgba(0, 0, 0, 0.4);
+
+        }
+
+        header h1{
+            font-family: 25px;
+            
+            color: white;
+            font-family: cursive;
+        }
+        
         body{
             font-family: Arial, Helvetica, sans-serif;
             background-image: linear-gradient(to right, rgb(50, 255, 95), rgb(0, 238, 255));
@@ -53,6 +70,7 @@ if(isset($_POST['submit']))
             padding: 15px;
             border-radius: 15px;
             width: 20%;
+            box-shadow: 1px 0 3px rgba(0, 0, 0, 0.8);
         }
         fieldset{
         border: 3px solid rgb(50, 255, 95);
@@ -64,11 +82,7 @@ if(isset($_POST['submit']))
             background-color: rgb(50, 255, 95);
             border-radius: 8px;
         }
-        h1{
-            text-align: center;
-            font-size: 50px;
-            font-family: cursive;
-        }
+
         .voltar{
             background-color: rgba(0 ,0 , 0, 0.8);
             text-decoration: none;
@@ -108,6 +122,7 @@ if(isset($_POST['submit']))
             border-radius: 10px;
             outline: none;
             font-size: 15px;
+            cursor: pointer;
         }
         #submit{
             background-image: linear-gradient(to right, rgb(50, 255, 95), rgb(0, 238, 255));
@@ -122,18 +137,23 @@ if(isset($_POST['submit']))
             background-image: linear-gradient(to right, rgb(45, 218, 82), rgb(4, 197, 211));
             cursor: pointer;
             transform: scale(1.05);
-           transition: .6s;
+            transition: .6s;
         }
     </style>
 </head>
 <body>
-    <a href="home.php" class="voltar">Voltar</a>
+    
+    <header>
     <h1>Resenhando</h1>
+    </header>
+
+    <a href="home.php" class="voltar">Voltar</a>
+
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
                 <legend><b>Registar-se</b></legend>
-                <br>
+                <br><br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome de usuário</label>
@@ -153,6 +173,7 @@ if(isset($_POST['submit']))
                     <input type="tel" name="telefone" id="telefone" class="inputUser" required>
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
+                <br>
                 <p>Sexo:</p>
                 <input type="radio" id="feminino" name="genero" value="feminino" required>
                 <label for="feminino">Feminino</label>
@@ -163,6 +184,7 @@ if(isset($_POST['submit']))
                 <input type="radio" id="outro" name="genero" value="outro" required>
                 <label for="outro">Outro</label>
                 <br><br>
+                <br>
                 <label for="data_nascimento"><b>Data de nascimento:</b></label>
                 <input type="date" name="data_nascimento" id="data_nascimento" class="data_nascimento" required>
                 <br><br><br>
